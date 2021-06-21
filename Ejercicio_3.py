@@ -4,6 +4,7 @@ from hashtable import *
 
 
 def mostRepeatedChar(string):
+    #utilizo una hash table organizada por double hashing.
     mayor = 0
     n = len(string)
     m = primo_mayor(n)

@@ -9,10 +9,13 @@ def isAnagram(string1,string2):
     n = len(string1)
     m = primo_mayor(n)
     T = Array(m,LinkedList())
+    #inserto los elementos de la primer cadena en la tabla hash.
     for i in range(0,n):
         pos = insertHash(T,string1[i])
         T[pos].head.value += 1
 
+    #calulo la posición en donde se deberian insertar los elementos de la segunda cadena,
+    # y verifica si en esa posicion ya está insertado el mismo elemento.
     for i in range(0,n):
         key = gen_key(string2[i],m)
         find = False

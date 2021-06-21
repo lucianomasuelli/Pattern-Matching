@@ -16,13 +16,14 @@ def hash(k,i,m):
 
 def gen_key(string,m):
   #genera un key numerico a partir de la string.
-  """
-  key = 0
-  for i in range(0,len(string)):
-    j = abs(i-len(string))
-    key += ord(string[i])*255^j
-  """
-  key = ord(string) - ord("a")
+
+  if len(string) > 1:
+    key = 0
+    for i in range(0,len(string)):
+      j = abs(i-len(string))
+      key += ord(string[i])*255^j
+  else:
+    key = ord(string) - ord("a")
   return key % m
 
 
